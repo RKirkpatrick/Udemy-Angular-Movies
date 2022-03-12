@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
   title = 'Udemy-Angular-Movies';
   moviesInTheaters;
   moviesFutureReleases;
+  display = true;
 
   duplicateNumber(n: number) {
     return n * 2;
