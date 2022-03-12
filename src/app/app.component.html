@@ -2,25 +2,10 @@
   {{ title }}
 </div>
 
-<div>The double of 3 is {{ duplicateNumber(3) }}</div>
+<h2>In Theaters</h2>
 
-<h2>Movie Data</h2>
+<app-movies-list [movies]="moviesInTheaters"></app-movies-list>
 
-<img
-  *ngIf="!movies"
-  src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47u46gkzdr4jutxw24epmisvwrheju95l88k8kegcr&rid=giphy.gif&ct=g"
-/>
+<h2>Future Releases</h2>
 
-<div *ngIf="movies?.length === 0">There are no records to display</div>
-
-<div *ngFor="let movie of movies; let index = index" class="movie-container">
-  <div>{{ index }}) {{ movie.title }}</div>
-
-  <div>
-    {{ movie.releaseDate | date: "d MMMM yyyy" | uppercase }}
-  </div>
-
-  <div>
-    {{ movie.price | currency }}
-  </div>
-</div>
+<app-movies-list [movies]="moviesFutureReleases"></app-movies-list>
