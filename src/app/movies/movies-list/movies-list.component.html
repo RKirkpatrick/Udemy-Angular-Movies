@@ -1,21 +1,25 @@
-<img
-  *ngIf="!movies"
-  src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47u46gkzdr4jutxw24epmisvwrheju95l88k8kegcr&rid=giphy.gif&ct=g"
-/>
+<!-- ng-content in generic list gets replaced with html in ng-container -->
+<app-generic-list [list]="movies">
+  <ng-container empty> There are no movies to display </ng-container>
+  <ng-container content>
+    <div
+      *ngFor="let movie of movies; let index = index"
+      class="movie-container"
+    >
+      <div>
+        {{ index }}) {{ movie.title }}
+        <button style="margin-left: 1rem" (click)="remove(index)">
+          Remove
+        </button>
+      </div>
 
-<div *ngIf="movies?.length === 0">There are no records to display</div>
+      <div>
+        {{ movie.releaseDate | date: "d MMMM yyyy" | uppercase }}
+      </div>
 
-<div *ngFor="let movie of movies; let index = index" class="movie-container">
-  <div>
-    {{ index }}) {{ movie.title }}
-    <button style="margin-left: 1rem" (click)="remove(index)">Remove</button>
-  </div>
-
-  <div>
-    {{ movie.releaseDate | date: "d MMMM yyyy" | uppercase }}
-  </div>
-
-  <div>
-    {{ movie.price | currency }}
-  </div>
-</div>
+      <div>
+        {{ movie.price | currency }}
+      </div>
+    </div>
+  </ng-container>
+</app-generic-list>
