@@ -12,11 +12,15 @@ export class AppComponent implements OnInit {
         title: 'Spider-Man',
         releaseDate: new Date(),
         price: 14.99,
+        poster:
+          'https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_QL75_UX190_CR0,0,190,281_.jpg',
       },
       {
         title: 'Moana',
         releaseDate: new Date('2011-11-14'),
         price: 10.99,
+        poster:
+          'https://m.media-amazon.com/images/M/MV5BMjI4MzU5NTExNF5BMl5BanBnXkFtZTgwNzY1MTEwMDI@._V1_QL75_UX190_CR0,0,190,281_.jpg',
       },
     ];
 
@@ -25,11 +29,15 @@ export class AppComponent implements OnInit {
         title: 'Avengers',
         releaseDate: new Date('2022-7-14'),
         price: 24.99,
+        poster:
+          'https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX190_CR0,0,190,281_.jpg',
       },
       {
-        title: 'Toy Stroy',
+        title: 'Toy Story',
         releaseDate: new Date('2022-11-14'),
         price: 12.99,
+        poster:
+          'https://m.media-amazon.com/images/M/MV5BMDU2ZWJlMjktMTRhMy00ZTA5LWEzNDgtYmNmZTEwZTViZWJkXkEyXkFqcGdeQXVyNDQ2OTk4MzI@._V1_QL75_UX190_CR0,1,190,281_.jpg',
       },
     ];
   }

@@ -2,23 +2,19 @@
 <app-generic-list [list]="movies">
   <ng-container empty> There are no movies to display </ng-container>
   <ng-container content>
-    <div
-      *ngFor="let movie of movies; let index = index"
-      class="movie-container"
-    >
-      <div>
-        <h2>{{ index }}) {{ movie.title }}</h2>
-        <button style="margin-left: 1rem" (click)="remove(index)">
-          Remove
-        </button>
-      </div>
-
-      <div>
-        {{ movie.releaseDate | date: "d MMMM yyyy" | uppercase }}
-      </div>
-
-      <div>
-        {{ movie.price | currency }}
+    <div class="movies-container">
+      <div
+        *ngFor="let movie of movies; let index = index"
+        class="movie-container"
+      >
+        <a>
+          <img [src]="movie.poster" alt="Movie Poster" />
+        </a>
+        <p>{{ movie.title }}</p>
+        <div>
+          <a mat-flat-button color="primary"> Edit </a>
+          <button mat-flat-button color="warn" type="button">Delete</button>
+        </div>
       </div>
     </div>
   </ng-container>
