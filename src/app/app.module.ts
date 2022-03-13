@@ -21,7 +21,7 @@ import { CreateMovieTheaterComponent } from './movie-theaters/create-movie-theat
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
 import { EditGenreComponent } from './genres/edit-genre/edit-genre.component';
-import { EditMovieTheaterComponent } from './movietheaters/edit-movie-theater/edit-movie-theater.component';
+import { EditMovieTheaterComponent } from './movie-theaters/edit-movie-theater/edit-movie-theater.component';
 import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 
 @NgModule({
