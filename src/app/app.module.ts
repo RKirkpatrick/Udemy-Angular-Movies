@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { MoviesListComponent } from './movies/movies-list/movies-list.component';
 import { GenericListComponent } from './utilities/generic-list/generic-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilities/rating/rating.component';
 import { HomeComponent } from './home/home.component';
-import { IndexGeneresComponent } from './generes/index-generes/index-generes.component';
-import { CreateGenereComponent } from './generes/create-genere/create-genere.component';
+import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
+import { CreateGenreComponent } from './genres/create-genre/create-genre.component';
 import { IndexActorsComponent } from './actors/index-actors/index-actors.component';
 import { CreateActorsComponent } from './actors/create-actors/create-actors.component';
 import { IndexMovieTheaterComponent } from './movie-theaters/index-movie-theater/index-movie-theater.component';
@@ -31,8 +32,8 @@ import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
     MenuComponent,
     RatingComponent,
     HomeComponent,
-    IndexGeneresComponent,
-    CreateGenereComponent,
+    IndexGenresComponent,
+    CreateGenreComponent,
     IndexActorsComponent,
     CreateActorsComponent,
     IndexMovieTheaterComponent,
@@ -48,6 +49,7 @@ import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
