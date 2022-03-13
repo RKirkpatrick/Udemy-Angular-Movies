@@ -8,6 +8,10 @@ import { CreateActorsComponent } from './actors/create-actors/create-actors.comp
 import { IndexMovieTheaterComponent } from './movie-theaters/index-movie-theater/index-movie-theater.component';
 import { CreateMovieTheaterComponent } from './movie-theaters/create-movie-theater/create-movie-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
+import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
+import { EditGenreComponent } from './genres/edit-genre/edit-genre.component';
+import { EditMovieTheaterComponent } from './movietheaters/edit-movie-theater/edit-movie-theater.component';
+import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 
 const routes: Routes = [
   {
@@ -17,14 +21,18 @@ const routes: Routes = [
 
   { path: 'genres', component: IndexGeneresComponent },
   { path: 'genres/create', component: CreateGenereComponent },
+  { path: 'genres/edit/:id', component: EditGenreComponent },
 
   { path: 'actors', component: IndexActorsComponent },
   { path: 'actors/create', component: CreateActorsComponent },
+  { path: 'actors/edit/:id', component: EditActorComponent },
 
   { path: 'movietheaters', component: IndexMovieTheaterComponent },
   { path: 'movietheaters/create', component: CreateMovieTheaterComponent },
+  { path: 'movietheaters/edit/:id', component: EditMovieTheaterComponent },
 
   { path: 'movies/create', component: CreateMovieComponent },
+  { path: 'movies/edit/:id', component: EditMovieComponent },
 ];
 
 @NgModule({
