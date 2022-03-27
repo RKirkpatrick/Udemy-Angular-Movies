@@ -1,0 +1,14 @@
+<form [formGroup]="form" (submit)="saveChanges()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput />
+    <mat-error>The name field is required</mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">
+      Save changes
+    </button>
+    <a mat-stroked-button routerLink="/movie-theaters">Cancel</a>
+  </div>
+</form>
