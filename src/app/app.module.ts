@@ -31,7 +31,7 @@ import { FormActorComponent } from './actors/form-actor/form-actor.component';
 import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { MovieTheaterFormComponent } from './movie-theaters/movie-theater-form/movie-theater-form.component';
-import { MapComponent } from './utilties/map/map.component';
+import { MapComponent } from './utilities/map/map.component';
 
 @NgModule({
   declarations: [
