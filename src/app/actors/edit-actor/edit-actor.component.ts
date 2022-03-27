@@ -13,6 +13,7 @@ export class EditActorComponent implements OnInit {
     dateOfBirth: new Date(),
     picture:
       'https://m.media-amazon.com/images/M/MV5BNzZiNTEyNTItYjNhMS00YjI2LWIwMWQtZmYwYTRlNjMyZTJjXkEyXkFqcGdeQXVyMTExNzQzMDE0._V1_UX214_CR0,0,214,317_AL_.jpg',
+    biography: 'default value',
   };
 
   constructor(private activatedRoute: ActivatedRoute) {}
