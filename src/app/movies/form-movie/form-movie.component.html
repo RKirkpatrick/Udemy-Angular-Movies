@@ -33,6 +33,12 @@
     (changeMarkdown)="changeMarkdown($event)"
   ></app-input-markdown>
 
+  <h4>Select the Genres</h4>
+  <app-multiple-selector
+    [NonSelectedItems]="nonSelectedGenres"
+    [SelectedItems]="selectedGenres"
+  ></app-multiple-selector>
+
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Save Changes
