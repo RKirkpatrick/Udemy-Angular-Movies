@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenresService } from '../genres.service';
 
 @Component({
   selector: 'app-index-generes',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index-genres.component.css'],
 })
 export class IndexGenresComponent implements OnInit {
-  constructor() {}
+  constructor(private genresService: GenresService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const genres = this.genresService.getAll();
+    console.log(genres);
+  }
 }
