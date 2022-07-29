@@ -10,7 +10,8 @@ export class IndexGenresComponent implements OnInit {
   constructor(private genresService: GenresService) {}
 
   ngOnInit(): void {
-    const genres = this.genresService.getAll();
-    console.log(genres);
+    this.genresService.getAll().subscribe((genres) => {
+      console.log(genres);
+    });
   }
 }
