@@ -21,7 +21,18 @@
           >
             Edit
           </a>
-          <button mat-flat-button color="warn">Delete</button>
+          <button
+            mat-flat-button
+            color="warn"
+            [swal]="{
+              title: 'Confirmation',
+              text: 'Are you sure that you want to delete the record?',
+              showCancelButton: true
+            }"
+            (confirm)="delete(element.id)"
+          >
+            Delete
+          </button>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

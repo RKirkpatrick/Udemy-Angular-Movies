@@ -27,4 +27,8 @@ export class GenresService {
   edit(id: number, genre: genreCreationDTO) {
     return this.http.put(`${this.apiURL}/${id}`, genre);
   }
+
+  delete(id: number) {
+    return this.http.delete(`${this.apiURL}/${id}`);
+  }
 }
