@@ -14,6 +14,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatTableModule } from '@angular/material/table';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatAutocompleteModule,
     MatTableModule,
     DragDropModule,
+    MatProgressSpinnerModule,
   ],
   imports: [CommonModule],
 })
