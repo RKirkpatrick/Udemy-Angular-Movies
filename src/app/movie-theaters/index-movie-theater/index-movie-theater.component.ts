@@ -13,10 +13,18 @@ export class IndexMovieTheaterComponent implements OnInit {
   constructor(private movieTheatersService: MovieTheatersService) {}
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData() {
     this.movieTheatersService
       .get()
       .subscribe((movieTheaters) => (this.movieTheaters = movieTheaters));
   }
 
-  delete(id: Number) {}
+  delete(id: number) {
+    this.movieTheatersService.delete(id).subscribe(() => {
+      this.loadData();
+    });
+  }
 }
