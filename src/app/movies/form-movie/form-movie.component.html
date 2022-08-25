@@ -30,6 +30,7 @@
   <h4>Summary</h4>
   <app-input-markdown
     [markdownContent]="model?.summary"
+    [label]="'Summary'"
     (changeMarkdown)="changeMarkdown($event)"
   ></app-input-markdown>
 
