@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { formatDateFormData } from '../utilities/utils';
-import { movieCreationDTO, moviePostGetDTO } from './movies.model';
+import { movieCreationDTO, movieDTO, moviePostGetDTO } from './movies.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,10 @@ export class MoviesService {
   private apiUrl = environment.apiURL + '/movies';
 
   constructor(private http: HttpClient) {}
+
+  public getById(id: number): Observable<movieDTO> {
+    return this.http.get<movieDTO>(`${this.apiUrl}/${id}`);
+  }
 
   public postGet(): Observable<moviePostGetDTO> {
     return this.http.get<moviePostGetDTO>(`${this.apiUrl}/postget`);

@@ -5,6 +5,10 @@ export interface coordinatesMap {
   longitude: number;
 }
 
+export interface coordinatesMapWithMessage extends coordinatesMap {
+  message: string;
+}
+
 export function markerIcon([latitude, longitude]: number[]): Marker<any> {
   return marker([latitude, longitude], {
     icon: icon({

@@ -16,6 +16,9 @@ export class EditMovieComponent implements OnInit {
     trailer: 'ABCDE',
     poster:
       'https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_QL75_UY281_CR0,0,190,281_.jpg',
+    genres: [],
+    movieTheaters: [],
+    actors: [],
   };
 
   constructor(private activatedRoute: ActivatedRoute) {}
