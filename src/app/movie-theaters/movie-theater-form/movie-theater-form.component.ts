@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { coordinatesMap } from 'src/app/utilities/map/coordinate';
+import {
+  coordinatesMap,
+  coordinatesMapWithMessage,
+} from 'src/app/utilities/map/coordinate';
 import { movieTheatersCreationDTO } from '../movie-theater.model';
 
 @Component({
@@ -10,7 +13,7 @@ import { movieTheatersCreationDTO } from '../movie-theater.model';
 })
 export class MovieTheaterFormComponent implements OnInit {
   form: FormGroup;
-  initialCoordinates: coordinatesMap[] = [];
+  initialCoordinates: coordinatesMapWithMessage[] = [];
 
   @Input()
   model: movieTheatersCreationDTO;
@@ -47,6 +50,7 @@ export class MovieTheaterFormComponent implements OnInit {
       this.initialCoordinates.push({
         latitude: this.model.latitude,
         longitude: this.model.longitude,
+        message: '',
       });
     }
   }
