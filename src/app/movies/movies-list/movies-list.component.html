@@ -14,7 +14,13 @@
           <a [routerLink]="'movie' + movie.id">{{ movie.title }}</a>
         </p>
         <div>
-          <a mat-flat-button color="primary"> Edit </a>
+          <a
+            [routerLink]="'/movies/edit/' + movie.id"
+            mat-flat-button
+            color="primary"
+          >
+            Edit
+          </a>
           <button mat-flat-button color="warn" type="button">Delete</button>
         </div>
       </div>
