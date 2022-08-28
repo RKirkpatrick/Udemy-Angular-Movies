@@ -7,10 +7,12 @@
         *ngFor="let movie of movies; let index = index"
         class="movie-container"
       >
-        <a>
+        <a [routerLink]="'/movie/' + movie.id">
           <img [src]="movie.poster" alt="Movie Poster" />
         </a>
-        <p>{{ movie.title }}</p>
+        <p>
+          <a [routerLink]="'movie' + movie.id">{{ movie.title }}</a>
+        </p>
         <div>
           <a mat-flat-button color="primary"> Edit </a>
           <button mat-flat-button color="warn" type="button">Delete</button>
