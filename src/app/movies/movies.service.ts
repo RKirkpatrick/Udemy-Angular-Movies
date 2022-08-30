@@ -8,6 +8,7 @@ import {
   movieCreationDTO,
   movieDTO,
   moviePostGetDTO,
+  moviePutGetDTO,
 } from './movies.model';
 
 @Injectable({
@@ -30,9 +31,18 @@ export class MoviesService {
     return this.http.get<moviePostGetDTO>(`${this.apiUrl}/postget`);
   }
 
-  public create(movieCreationDTO: movieCreationDTO) {
+  public putGet(id: number): Observable<moviePutGetDTO> {
+    return this.http.get<moviePutGetDTO>(`${this.apiUrl}/putget/${id}`);
+  }
+
+  public edit(id: number, movieCreationDTO: movieCreationDTO) {
     const formData = this.BuildFormData(movieCreationDTO);
-    return this.http.post(this.apiUrl, formData);
+    return this.http.put(`${this.apiUrl}/${id}`, formData);
+  }
+
+  public create(movieCreationDTO: movieCreationDTO): Observable<number> {
+    const formData = this.BuildFormData(movieCreationDTO);
+    return this.http.post<number>(this.apiUrl, formData);
   }
 
   private BuildFormData(movie: movieCreationDTO): FormData {
