@@ -11,7 +11,7 @@
           <img [src]="movie.poster" alt="Movie Poster" />
         </a>
         <p>
-          <a [routerLink]="'movie' + movie.id">{{ movie.title }}</a>
+          <a [routerLink]="'/movie/' + movie.id">{{ movie.title }}</a>
         </p>
         <div>
           <a

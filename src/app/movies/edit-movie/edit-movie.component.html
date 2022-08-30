@@ -8,7 +8,7 @@
   [nonSelectedMovieTheaters]="nonSelectedMovieTheaters"
   [selectedMovieTheaters]="selectedMovieTheaters"
   [selectedActors]="selectedActors"
-  (saveChanges)="saveChanges($event)"
+  (onSaveChanges)="saveChanges($event)"
 ></app-form-movie>
 
 <mat-spinner *ngIf="!model"></mat-spinner>
