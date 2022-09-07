@@ -28,15 +28,12 @@ export class ActorsAutocompleteComponent implements OnInit {
   ngOnInit(): void {
     this.control.valueChanges.subscribe((value) => {
       this.actorsService.searchByName(value).subscribe((actors) => {
-        console.log(actors);
         this.actorsToDisplay = actors;
       });
     });
   }
 
   optionSelected(event: MatAutocompleteSelectedEvent) {
-    console.log(event.option.value);
-
     this.control.patchValue('');
 
     if (
