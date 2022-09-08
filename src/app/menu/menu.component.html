@@ -11,19 +11,23 @@
     </a>
   </div>
 
-  <div>
-    <a mat-button routerLink="genres"> Genres </a>
-  </div>
+  <app-authorize-view [role]="'admin'">
+    <ng-container authorized>
+      <div>
+        <a mat-button routerLink="genres"> Genres </a>
+      </div>
 
-  <div>
-    <a mat-button routerLink="actors"> Actors </a>
-  </div>
+      <div>
+        <a mat-button routerLink="actors"> Actors </a>
+      </div>
 
-  <div>
-    <a mat-button routerLink="movie-theaters"> Movie Theaters </a>
-  </div>
+      <div>
+        <a mat-button routerLink="movie-theaters"> Movie Theaters </a>
+      </div>
 
-  <div>
-    <a mat-button routerLink="movies/create"> Create Movie </a>
-  </div>
+      <div>
+        <a mat-button routerLink="movies/create"> Create Movie </a>
+      </div>
+    </ng-container>
+  </app-authorize-view>
 </mat-toolbar>
