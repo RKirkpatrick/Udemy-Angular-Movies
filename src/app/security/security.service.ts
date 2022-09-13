@@ -32,6 +32,15 @@ export class SecurityService {
     return true;
   }
 
+  getFieldFromJWT(field: string): string {
+    const token = localStorage.getItem(this.tokenKey);
+    if (!token) {
+      return '';
+    }
+    const dataToken = JSON.parse(atob(token.split('.')[1]));
+    return dataToken[field];
+  }
+
   logout() {
     localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.expirationTokenKey);
