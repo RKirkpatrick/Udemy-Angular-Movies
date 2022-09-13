@@ -1,1 +1,5 @@
-<p>login works!</p>
+<app-display-errors [errors]="errors"></app-display-errors>
+<app-authentication-form
+  [action]="'Login'"
+  (onSubmit)="login($event)"
+></app-authentication-form>
