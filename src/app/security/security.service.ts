@@ -15,7 +15,26 @@ export class SecurityService {
   constructor(private http: HttpClient) {}
 
   isAuthenticated(): boolean {
-    return false;
+    const token = localStorage.getItem(this.tokenKey);
+
+    if (!token) {
+      return false;
+    }
+
+    const expiration = localStorage.getItem(this.expirationTokenKey);
+    const expirationDate = new Date(expiration);
+
+    if (expirationDate <= new Date()) {
+      this.logout();
+      return false;
+    }
+
+    return true;
+  }
+
+  logout() {
+    localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.expirationTokenKey);
   }
 
   getRole(): string {
@@ -27,6 +46,13 @@ export class SecurityService {
   ): Observable<authenticationResponse> {
     return this.http.post<authenticationResponse>(
       this.apiURL + '/create',
+      userCredentials
+    );
+  }
+
+  login(userCredentials: userCredentials): Observable<authenticationResponse> {
+    return this.http.post<authenticationResponse>(
+      this.apiURL + '/login',
       userCredentials
     );
   }
