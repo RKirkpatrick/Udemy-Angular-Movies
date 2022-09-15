@@ -45,7 +45,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   generateYoutubeURLForEmbeddedVideo(url: any): SafeResourceUrl {
-    if (!url) {
+    if (url == 'null' || !url) {
       return '';
     }
 
