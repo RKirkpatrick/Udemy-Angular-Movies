@@ -73,4 +73,8 @@ export class SecurityService {
       authenticationResponse.expiration.toString()
     );
   }
+
+  getToken() {
+    return localStorage.getItem(this.tokenKey);
+  }
 }
