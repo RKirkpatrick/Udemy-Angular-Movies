@@ -9,8 +9,9 @@ import { authenticationResponse, userCredentials } from './security.model';
 })
 export class SecurityService {
   private apiURL = environment.apiURL + '/accounts';
-  private tokenKey: string = 'token';
-  private expirationTokenKey: string = 'token-expiration';
+  private readonly tokenKey: string = 'token';
+  private readonly expirationTokenKey: string = 'token-expiration';
+  private readonly roleField = 'role';
 
   constructor(private http: HttpClient) {}
 
@@ -47,7 +48,7 @@ export class SecurityService {
   }
 
   getRole(): string {
-    return 'admin';
+    return this.getFieldFromJWT(this.roleField);
   }
 
   register(
